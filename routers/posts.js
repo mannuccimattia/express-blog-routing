@@ -3,7 +3,8 @@ const router = express.Router();
 
 // index
 router.get("/", (req, res) => {
-  res.send("Indice dei post");
+  const posts = require("../posts_obj")
+  res.json(posts);
 })
 
 // show
