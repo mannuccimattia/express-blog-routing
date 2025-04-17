@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const posts = require("../posts_obj")
+const posts = require("../posts_arr")
 
 // index
 router.get("/", (req, res) => {
