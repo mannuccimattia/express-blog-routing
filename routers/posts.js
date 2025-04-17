@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
 
 // show
 router.get("/:id", (req, res) => {
-  res.json(posts[req.params.id - 1]);
+  !posts[req.params.id - 1] ? res.send("Post non trovato") : res.json(posts[req.params.id - 1]);
 })
 
 // store
