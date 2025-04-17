@@ -1,20 +1,20 @@
 const express = require("express");
 const router = express.Router();
+const posts = require("../posts_obj")
 
 // index
 router.get("/", (req, res) => {
-  const posts = require("../posts_obj")
   res.json(posts);
 })
 
 // show
 router.get("/:id", (req, res) => {
-  res.send(`Mostro il post ${req.params.id}`);
+  res.json(posts[req.params.id - 1]);
 })
 
 // store
 router.post("/", (req, res) => {
-  res.send("Aggiungi un nuovo post")
+  res.send("Aggiungi un nuovo post");
 })
 
 // update
@@ -29,7 +29,7 @@ router.patch("/:id", (req, res) => {
 
 // delete
 router.delete("/:id", (req, res) => {
-  res.send(`Elimina il post ${req.params.id}`)
+  res.send(`Elimina il post ${req.params.id}`);
 })
 
 module.exports = router;
